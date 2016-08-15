@@ -2,9 +2,16 @@ package master;
 
 public class Calculation {
 	
-	double itemPrice = 0;
-	double quantity = 0;
 	
+
+	
+	public double calculate(double itemPrice, double quantity)
+	{
+		
+		double Result;
+		Result = itemPrice * quantity;
+		return Result;
+	}
 
 
 }
