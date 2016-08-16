@@ -27,20 +27,42 @@ public static void main(String[] args) {
 	readFile(menuFile);
 	
 	
+//	Product test = new Product();
+	
+	Product product = new Product(null, null, 0.0);
 	
 	System.out.println("Please Choose from the LTL Cafe Menu!  Enter 1 to 12.");
 	Scanner scan1 = new Scanner(System.in);
 	String userInput = scan1.nextLine();
 	
-	
-	Product menuItem = new Product();
-	
-	menuItem.setName(userInput);
-	
-	
+		
+ArrayList<Product> cafeItems = new ArrayList<Product>();
 
-	
-	}//End of main 
+cafeItems.add(new Product("1", "Caffe Americano", 5.00));
+cafeItems.add(new Product("2", "Caffe Latte", 5.00));
+cafeItems.add(new Product("3", "Caffe Mocha", 5.00 ));
+cafeItems.add(new Product("4", "Cappuccino", 5.00));
+cafeItems.add(new Product("5", "Caramel Macchino", 6.00));
+
+boolean found=false;
+for(int i=0;i<cafeItems.size();i++){
+	   if(userInput.equalsIgnoreCase(cafeItems.get(i).getNumber())){
+		   System.out.println(cafeItems.get(i).getName());
+		   System.out.println(cafeItems.get(i).getItemPrice());
+		   found=true;
+	   }	
+}
+if(!found){
+	System.out.println("this item does not exist");
+
+
+}
+
+
+
+
+
+}//End of main 
 
 public static void readFile(File myConfigFile) {
 	try {
@@ -66,3 +88,15 @@ public static void readFile(File myConfigFile) {
 
 
 }//End of Menu
+//test.setName(userInput);
+	//System.out.println(test.getName());
+	
+	
+	
+	
+	//Product menuItem = new Product();
+	
+	//menuItem.setName(userInput);
+	
+	//System.out.println(menuItem.getName());
+	
