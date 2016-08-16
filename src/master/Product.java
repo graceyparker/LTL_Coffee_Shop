@@ -5,9 +5,117 @@ import java.util.Scanner;
 public class Product {
 
 	private String Name;
+	private String number;
 	private String Category;
 	private double itemPrice;
+	
 	Scanner scan1 = new Scanner(System.in);
+	
+	
+	public String getName() {
+			return Name;
+	}
+	
+	
+	public void setName(String name) {
+		Name = name;
+	}
+	
+	
+	public Product(String number, String Name, double itemPrice) {
+
+		setNumber(number);
+		setName(Name);
+		setItemPrice(itemPrice);
+	}
+	
+	
+	
+	
+	public String getNumber() {
+		return number;
+	}
+
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
+
+	public String getCategory() {
+		return Category;
+	}
+	public void setCategory(String category) {
+		Category = category;
+	}
+	public double getItemPrice() {
+		return itemPrice;
+	}
+	public void setItemPrice(double itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+//	public Product(String name, String category, double itemPrice) {
+	//	super();
+		//Name = name;
+		//Category = category;
+	//	this.itemPrice = itemPrice;
+//	}
+	public Product() {
+		super();
+	}
+	public Product(String name, double itemPrice) {
+		super();
+		Name = name;
+		this.itemPrice = itemPrice;
+	}
+	public Product(String name) {
+		super();
+		Name = name;
+	}
+}
+	
+/*
+	String userInput =" ";
+	public String getName(String name) {
+		
+		if (userInput.equalsIgnoreCase("1")) {
+			name = "Caffe Americano";
+			System.out.println("Cafe");
+		} else if (userInput.equalsIgnoreCase("2")) {
+			name ="Caffe Latte";
+		} else if (userInput.equalsIgnoreCase("3")) {
+			name = "Caffe Mocha";
+		} else if (userInput.equalsIgnoreCase("4")) {
+			name ="Cappuccino";
+		} else if (userInput.equalsIgnoreCase("5")) {
+			name = "Caramel Macchiato";
+		} else if (userInput.equalsIgnoreCase("6")) {
+			name = "Caramelized Honey Latte";
+		} else if (userInput.equalsIgnoreCase("7")) {
+			name = "Cinnamon Dolce Latte";
+		} else if (userInput.equalsIgnoreCase("8")) {
+			name = "Cheese Danish";
+		} else if (userInput.equalsIgnoreCase("9")) {
+			name = "Chocolate Chip Cookie";
+		} else if (userInput.equalsIgnoreCase("10")) {
+			name = "Chocolate Chip Cookie";
+		} else if (userInput.equalsIgnoreCase("11")) {
+			name = "Chocolate Chunk Muffin";
+		} else if (userInput.equalsIgnoreCase("12")) {
+			name = "Chocolate Croissant";
+		} else if (name != null)
+		{ System.out.println("Invalid!!");}
+	
+		return Name = name;
+	
+	}
+}
+	
+	
+	
+	
+}
+	/*Scanner scan1 = new Scanner(System.in);
 	String userInput = scan1.nextLine();
 	
 	int userInputQty = scan1.nextInt();	
@@ -16,7 +124,6 @@ public class Product {
 
 	int userInputPrice = scan1.nextInt();
 
-	
 	
 	public String getName() {
 		return Name;
@@ -61,37 +168,6 @@ public class Product {
 
 
 
-	public void setName(String name) {
-		if (userInput.equalsIgnoreCase("1")) {
-			name = "Caffe Americano";
-		} else if (userInput.equalsIgnoreCase("2")) {
-			name ="Caffe Latte";
-		} else if (userInput.equalsIgnoreCase("3")) {
-			name = "Caffe Mocha";
-		} else if (userInput.equalsIgnoreCase("4")) {
-			name ="Cappuccino";
-		} else if (userInput.equalsIgnoreCase("5")) {
-			name = "Caramel Macchiato";
-		} else if (userInput.equalsIgnoreCase("6")) {
-			name = "Caramelized Honey Latte";
-		} else if (userInput.equalsIgnoreCase("7")) {
-			name = "Cinnamon Dolce Latte";
-		} else if (userInput.equalsIgnoreCase("8")) {
-			name = "Cheese Danish";
-		} else if (userInput.equalsIgnoreCase("9")) {
-			name = "Chocolate Chip Cookie";
-		} else if (userInput.equalsIgnoreCase("10")) {
-			name = "Chocolate Chip Cookie";
-		} else if (userInput.equalsIgnoreCase("11")) {
-			name = "Chocolate Chunk Muffin";
-		} else if (userInput.equalsIgnoreCase("12")) {
-			name = "Chocolate Croissant";
-		} else { System.out.println("Invalid selection. Please select from 1 - 12.");}
-	
-		Name = name;
-	System.out.println(Name);
-	
-	}
 
 	public double getItemPrice() {
 		return itemPrice;
@@ -159,7 +235,6 @@ public class Product {
 		} else { System.out.println("Invalid selection. Please select from 1 - 12.");}
 		
 	}
-*/
 	public Product(String name, String category, double itemPrice) {
 		super();
 		setName(name);
@@ -174,6 +249,6 @@ public class Product {
 		
 	}
 	
+	 */
 	
-
-}
+	
