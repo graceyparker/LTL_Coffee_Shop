@@ -27,6 +27,17 @@ public static void main(String[] args) {
 	readFile(menuFile);
 	
 	
+	
+	System.out.println("Please Choose from the LTL Cafe Menu!  Enter 1 to 12.");
+	Scanner scan1 = new Scanner(System.in);
+	String userInput = scan1.nextLine();
+	
+	
+	Product menuItem = new Product();
+	
+	menuItem.setName(userInput);
+	
+	
 
 	
 	}//End of main 
