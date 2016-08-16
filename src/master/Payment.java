@@ -9,7 +9,6 @@ public class Payment {
 
 	//	public static receivePayment()
 		Scanner scan1 = new Scanner(System.in);
-		System.out.println("How would you like to pay? Please enter credit, cash, or check");
 		String paymentInput = scan1.nextLine();
 		double grandTotal = 0;
 			
