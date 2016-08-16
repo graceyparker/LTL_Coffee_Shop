@@ -117,6 +117,11 @@ public class Product {
 		setItemPrice(itemPrice);
 	}
 	
+	public Product() {
+		super();
+	}
+	
+	
 	public void getUserInput(){
 		
 	System.out.println("You've selected: " + getName());
