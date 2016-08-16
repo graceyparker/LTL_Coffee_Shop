@@ -4,12 +4,15 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Menu {
+public class CafeApp {
 
 public static void main(String[] args) {
 	
@@ -22,6 +25,9 @@ public static void main(String[] args) {
 	File menuFile = filePath.toFile();
 
 	readFile(menuFile);
+	
+	
+
 	
 	}//End of main 
 
@@ -45,6 +51,7 @@ public static void readFile(File myConfigFile) {
 
 	}
 }
+
 
 
 }//End of Menu
