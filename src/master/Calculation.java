@@ -1,6 +1,8 @@
 package master;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+
 
 public class Calculation {
 	
@@ -15,10 +17,10 @@ public class Calculation {
 		return Result;
 	}
 	
-	public BigDecimal calculateGrandTotal(double itemPrice, double quantity)
+	public double calculateGrandTotal(double itemPrice, double quantity)
 	{
 		
-		BigDecimal Result;
+		/*BigDecimal Result;
 		BigDecimal itemprice = new BigDecimal(itemPrice);
 		BigDecimal qty = new BigDecimal(quantity);
 		BigDecimal tax = new BigDecimal(1.06);
@@ -26,12 +28,12 @@ public class Calculation {
 		Result = (itemprice.multiply(qty)).multiply(tax);
 		Result.toString();
 		return Result;
+*/		
 		
-		/*
-		Result = BigDecimal.multiply()
+		//Result = BigDecimal.multiply()
 		double Result;
 		Result = (itemPrice * quantity)*1.06;
-		return Result;*/
+		return Result;
 	}
 
 
