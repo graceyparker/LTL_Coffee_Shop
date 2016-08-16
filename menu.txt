@@ -1,16 +1,16 @@
 	Drinks			Description						Price
 -----------------------------------------------------------------------------------------------
 
-1.	Caffè Americano		Espresso shots are topped with hot water 		5.00
+1.	Caffe Americano		Espresso shots are topped with hot water 		5.00
 				to produce a light layer of crema. 
 				The result is this wonderfully rich cup 
 				with depth and nuance	
 
-2.	Caffè Latte		Our dark, rich espresso balanced with steamed		5.00 
+2.	Caffe Latte		Our dark, rich espresso balanced with steamed		5.00 
 				milk and a light layer of foam. A perfect milk 
 				forward warm up	Drink
 	
-3.	Caffè Mocha		We combine our rich, full-bodied espresso with 
+3.	Caffe Mocha		We combine our rich, full-bodied espresso with 
 				bittersweet mocha sauce and steamed milk, then 
 				top it off with sweetened whipped cream. 
 				The classic coffee drink to satisfy your sweet tooth	5.00
@@ -47,3 +47,4 @@
 12.	Chocolate Croissant	Light, flakey, 100 percent butter croissant dough is	4.00 
 				wrapped around two chocolate batons to create a 
 				perfect balance that'll satisfy your sweet tooth.	
+13.	Cookie	made from oatmeal			2.014.	Coffee			Brazilian Coffee					2.00
