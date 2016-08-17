@@ -1,6 +1,5 @@
 //in order to keep track of the items after every order we need an another array list
 
-
 package master;
 
 import java.io.BufferedReader;
@@ -26,10 +25,13 @@ public class CafeApp {
 
 		int userInputQuantity = 0;
 		String userInput = " ";
-		//double grandTotal = 0;
+		// double grandTotal = 0;
 		ArrayList<Product> cafeItems = new ArrayList<Product>();
+		ArrayList<Product> countingCafe = new ArrayList<Product>();
+		ArrayList<Product> keepingCafe = new ArrayList<Product>();
 		DecimalFormat df = new DecimalFormat();
 		Scanner scan1 = new Scanner(System.in);
+		String userInput1 = " ";
 
 		Path filePath = Paths.get("menu.txt");
 
@@ -61,13 +63,20 @@ public class CafeApp {
 			boolean found = false;
 			for (int i = 0; i < cafeItems.size(); i++) {
 				if (userInput.equalsIgnoreCase(cafeItems.get(i).getNumber())) {
+
 					System.out.println(cafeItems.get(i).getName());
 					System.out.println(cafeItems.get(i).getItemPrice());
 					found = true;
 				}
 			}
 			if (!found) {
-				System.out.println("this item does not exist");
+				System.out
+						.println("This item does not exist. "
+								+ "Please Choose from the LTL Cafe Menu!  Enter 1 to 12.");
+				System.out.println();
+
+				// continue; //try catch can be placed here
+				 break;
 
 			}
 
@@ -86,19 +95,18 @@ public class CafeApp {
 		}
 
 		System.out.println("Your tax is: "
-				+ df.format(calc.calculate(cafeItems.get(Integer.parseInt(userInput) - 1)
-						.getItemPrice(), userInputQuantity) * 0.06));
+				+ df.format(calc.calculate(
+						cafeItems.get(Integer.parseInt(userInput) - 1)
+								.getItemPrice(), userInputQuantity) * 0.06));
 		System.out.print("Thank you. Your total is: ");
 		System.out.println(df.format(calc.calculateGrandTotal(
 				cafeItems.get(Integer.parseInt(userInput) - 1).getItemPrice(),
 				userInputQuantity)));
 
-		
-		
 		double grandTotal = (calc.calculateGrandTotal(
 				cafeItems.get(Integer.parseInt(userInput) - 1).getItemPrice(),
 				userInputQuantity));
-		
+
 		System.out
 				.println("How would you like to pay for your items? Cash, Credit, or Check?");
 		String paymentInput = scan1.nextLine();
@@ -110,7 +118,7 @@ public class CafeApp {
 				System.out.println("Your change is: " + changeDue);
 				System.out.println("Thank you for your order!");
 			} else if (payment == grandTotal) {
-				System.out.println("Thank you. Your order will up soon");
+				System.out.println("Thank you. Your order will be up soon");
 			} else if (payment < grandTotal) {
 				double amountDue = grandTotal - payment;
 				System.out.println("You owe: " + amountDue);
@@ -130,6 +138,7 @@ public class CafeApp {
 		else if (paymentInput.equalsIgnoreCase("check")) {
 			System.out.println("Please enter your check number: ");
 			String checkNumber = scan1.nextLine();
+			System.out.println("Thank you. Your order will arrive soon.");
 		}
 
 	}// End of main
