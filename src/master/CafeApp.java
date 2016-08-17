@@ -37,6 +37,11 @@ public class CafeApp {
 
 		File menuFile = filePath.toFile();
 		Calculation calc = new Calculation();
+	//	Product orderedProduct = new Product(null, 0.0, 0);
+		ArrayList<Product> ordered = new ArrayList();
+		String orderedCafeitem = null;
+		double orderedItemPrice = 0;
+
 		// Payment pay = new Payment();
 
 		// double subtotal =
@@ -50,8 +55,7 @@ public class CafeApp {
 
 			Product product = new Product(null, null, 0.0);
 
-			System.out
-					.println("Please Choose from the LTL Cafe Menu!  Enter 1 to 12.");
+			System.out.println("Please Choose from the LTL Cafe Menu!  Enter 1 to 12.");
 			userInput = scan1.nextLine();
 
 			cafeItems.add(new Product("1", "Caffe Americano", 5.00));
@@ -64,9 +68,16 @@ public class CafeApp {
 			for (int i = 0; i < cafeItems.size(); i++) {
 				if (userInput.equalsIgnoreCase(cafeItems.get(i).getNumber())) {
 
+<<<<<<< HEAD
+=======
+					orderedCafeitem = cafeItems.get(i).getName();
+>>>>>>> e2e414f6a6c5220a906c96aa96d72788e2d652d7
 					System.out.println(cafeItems.get(i).getName());
+					orderedItemPrice = cafeItems.get(i).getItemPrice();
 					System.out.println(cafeItems.get(i).getItemPrice());
+					ordered.add(new Product(orderedCafeitem, orderedItemPrice, userInputQuantity));
 					found = true;
+
 				}
 			}
 			if (!found) {
@@ -85,30 +96,42 @@ public class CafeApp {
 			scan1.nextLine();
 
 			System.out.println("Your subtotal is $"
-					+ calc.calculate(
-							cafeItems.get(Integer.parseInt(userInput) - 1)
-									.getItemPrice(), userInputQuantity));
-			System.out
-					.println("Would you like add another item to your order? Yes or no");
+					+ calc.calculate(cafeItems.get(Integer.parseInt(userInput) - 1).getItemPrice(), userInputQuantity));
+
+			// ordered.add(new Product(orderedCafeItem, );
+
+			System.out.println("Would you like add another item to your order? Yes or no");
 			choice = scan1.nextLine();
 
 		}
 
+<<<<<<< HEAD
 		System.out.println("Your tax is: "
 				+ df.format(calc.calculate(
 						cafeItems.get(Integer.parseInt(userInput) - 1)
 								.getItemPrice(), userInputQuantity) * 0.06));
+=======
+		System.out.println("Your tax is: " + df
+				.format(calc.calculate(cafeItems.get(Integer.parseInt(userInput) - 1).getItemPrice(), userInputQuantity)
+						* 0.06));
+>>>>>>> e2e414f6a6c5220a906c96aa96d72788e2d652d7
 		System.out.print("Thank you. Your total is: ");
 		System.out.println(df.format(calc.calculateGrandTotal(
-				cafeItems.get(Integer.parseInt(userInput) - 1).getItemPrice(),
-				userInputQuantity)));
+				cafeItems.get(Integer.parseInt(userInput) - 1).getItemPrice(), userInputQuantity)));
 
+<<<<<<< HEAD
 		double grandTotal = (calc.calculateGrandTotal(
 				cafeItems.get(Integer.parseInt(userInput) - 1).getItemPrice(),
 				userInputQuantity));
 
 		System.out
 				.println("How would you like to pay for your items? Cash, Credit, or Check?");
+=======
+		double grandTotal = (calc.calculateGrandTotal(cafeItems.get(Integer.parseInt(userInput) - 1).getItemPrice(),
+				userInputQuantity));
+
+		System.out.println("How would you like to pay for your items? Cash, Credit, or Check?");
+>>>>>>> e2e414f6a6c5220a906c96aa96d72788e2d652d7
 		String paymentInput = scan1.nextLine();
 		if (paymentInput.equalsIgnoreCase("cash")) {
 			System.out.println("Please enter the amount tendered:");
@@ -126,11 +149,9 @@ public class CafeApp {
 		} else if (paymentInput.equalsIgnoreCase("credit")) {
 			System.out.println("Please enter your credit card number:");
 			String creditNumber = scan1.nextLine();
-			System.out
-					.println("Please enter your expiration date as a four digit number (00/00): ");
+			System.out.println("Please enter your expiration date as a four digit number (00/00): ");
 			String creditDate = scan1.nextLine();
-			System.out
-					.println("Please enter the CVV number (the three digits on the back of your card: ");
+			System.out.println("Please enter the CVV number (the three digits on the back of your card: ");
 			String creditCvv = scan1.nextLine();
 			System.out.println("Thank you for your order!");
 		}
@@ -139,6 +160,14 @@ public class CafeApp {
 			System.out.println("Please enter your check number: ");
 			String checkNumber = scan1.nextLine();
 			System.out.println("Thank you. Your order will arrive soon.");
+		}
+
+		for (int i = 0; i < ordered.size(); i++) {
+
+			System.out.println(ordered.get(i).getName());
+			System.out.println(ordered.get(i).getItemPrice());
+			System.out.println(ordered.get(i).getItemQty());
+
 		}
 
 	}// End of main
@@ -164,12 +193,4 @@ public class CafeApp {
 		}
 	}
 
-}// End of Menu
-// test.setName(userInput);
-// System.out.println(test.getName());
-
-// Product menuItem = new Product();
-
-// menuItem.setName(userInput);
-
-// System.out.println(menuItem.getName());
+}
