@@ -1,25 +1,40 @@
-	Drinks			Description						Price
+		Drinks			Description						Price
 -----------------------------------------------------------------------------------------------
 
 1.	Caffe Americano		Espresso shots are topped with hot water 		5.00
 				to produce a light layer of crema. 
-				The result is this wonderfully rich cup 
-				with depth and nuance	
-
+				
 2.	Caffe Latte		Our dark, rich espresso balanced with steamed		5.00 
-				milk and a light layer of foam. A perfect milk 
-				forward warm up	Drink
+				milk and a light layer of foam. 
 	
-3.	Caffe Mocha		We combine our rich, full-bodied espresso with 
+3.	Caffe Mocha		We combine our rich, full-bodied espresso with 		5.0
 				bittersweet mocha sauce and steamed milk, then 
-				top it off with sweetened whipped cream. 
-				The classic coffee drink to satisfy your sweet tooth	5.00
+				top it off with sweetened whipped cream. 	
 
 4.	Cappuccino		Dark, rich espresso lies in wait under a smoothed 	5.00
-				and stretched layer of thick foam. It's truly the 
-				height of our baristas' craft.
+				and stretched layer of thick foam.
 
 5.	Caramel Macchiato	Freshly steamed milk with vanilla-flavored syrup is 	6.00
 				marked with espresso and topped with caramel drizzle 
 				for an oh-so-sweet finish.
+
+6.	Caramelized Honey Latte	A sophisticated, slow-cooked caramel honey sauce 	5.00
+				meets our bold espresso roast and steamed milk to 
+				create a delightfully sweet latte experience.
+
+7.	Cinnamon Dolce Latte	We add freshly steamed milk and cinnamon dolce 		6.00
+				flavored syrup to our classic espresso.
+
+8.	Cheese Danish		A flaky pastry folded around reduced-fat cream cheese.	3.00
+
+9.	Chewy Chocolate Cookie	A chewy chocolate cookie loaded with semisweet 		3.00
+
+10.	Chocolate Chip Cookie	A chewy cookie loaded with semisweet chocolate chunks.	3.00
+
+11.	Chocolate Chunk Muffin	Our moist, muffin is mixed with four (that’s right,	4.00 
+				four) different Colombian single-origin chocolates.
+
+12.	Chocolate Croissant	Light, flakey, 100 percent butter croissant dough is	3.00 
+				wrapped around two chocolate batons.
+
 

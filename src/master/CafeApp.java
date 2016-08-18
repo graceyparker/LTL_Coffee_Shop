@@ -17,42 +17,51 @@ public class CafeApp {
     public static void main(String[] args) {
         System.out.println("Welcome to LTL Coffee Shop!");
         System.out.println("-----------------------------");
-        String fileName = "menu.txt";
-        int userInputQuantity = 0;
-        String userInput = " ";
-        //double grandTotal = 0;
-        ArrayList<Product> cafeItems = new ArrayList<Product>();
         DecimalFormat df = new DecimalFormat();
         Scanner scan1 = new Scanner(System.in);
+        Calculation calc = new Calculation();
+        ArrayList<Product> cafeItems = new ArrayList<Product>();
+        ArrayList<Product> receipt = new ArrayList<Product>();
+        String fileName = "menu.txt";
+        String userInput = " ";
+        int userInputQuantity = 0;
+        //double grandTotal = 0;
         Path filePath = Paths.get("menu.txt");
         File menuFile = filePath.toFile();
-        Calculation calc = new Calculation();
         // Payment pay = new Payment();
-        ArrayList<Product> receipt = new ArrayList<Product>();
+        readFile(menuFile);
         
         String choice = "yes";
         while (choice.equalsIgnoreCase("yes")) {
-            readFile(menuFile);
             // Product test = new Product();
-            Product product = new Product(null, null, 0.0);
+//            Product product = new Product(null, null, 0.0);
             System.out
                     .println("Please Choose from the LTL Cafe Menu!  Enter 1 to 12.");
-            userInput = scan1.nextLine();
             cafeItems.add(new Product("1", "Caffe Americano", 5.00));
             cafeItems.add(new Product("2", "Caffe Latte", 5.00));
             cafeItems.add(new Product("3", "Caffe Mocha", 5.00));
             cafeItems.add(new Product("4", "Cappuccino", 5.00));
             cafeItems.add(new Product("5", "Caramel Macchino", 6.00));
-            boolean found = false;
+            cafeItems.add(new Product("6", "Caramelized Honey Latte", 5.00));
+            cafeItems.add(new Product("7", "Cinnamon Dolce Latte", 6.00));
+            cafeItems.add(new Product("8", "Cheese Danish", 3.00));
+            cafeItems.add(new Product("9", "Chewy Chocolate Cookie", 3.00));
+            cafeItems.add(new Product("10", "Chocolate Chip Cookie", 3.00));
+            cafeItems.add(new Product("11", "Chewy Chunk Muffin", 4.00));
+            cafeItems.add(new Product("12", "Croissant", 3.00));
+            
+            userInput = scan1.nextLine();
+           boolean found = false;
             for (int i = 0; i < cafeItems.size(); i++) {
                 if (userInput.equalsIgnoreCase(cafeItems.get(i).getNumber())) {
-                    System.out.println(cafeItems.get(i).getName());
+                    System.out.print(cafeItems.get(i).getName() + "     $"
+                    		+ "");                    
                     System.out.println(cafeItems.get(i).getItemPrice());
                     found = true;
                 }
             }
             if (!found) {
-                System.out.println("this item does not exist");
+                  System.out.println("this item does not exist");
                 
 continue;
 // if you put the incorrect value, it will print the int again. 
@@ -90,7 +99,7 @@ continue;
             if (payment > grandTotal) {
                 double changeDue = payment - grandTotal;
                 System.out.println("Your change is: " + df.format(changeDue));
-                System.out.println("Thank you for your order!");
+                System.out.println("Thank you for your order!\n\n");
             } else if (payment == grandTotal) {
                 System.out.println("Thank you. Your order will  up soon");
             } else if (payment < grandTotal) {
@@ -126,18 +135,33 @@ continue;
     
         
         }
-         {
+        // {
     //      System.out.println("Invalid number. Please eight digits.");//it needs to loop back to the top. It doesn't.
-        
-         for (int i=0; i<receipt.size(); i++) {
-             System.out.println(receipt.get(i).getName());
-             System.out.println(receipt.get(i).getItemPrice());
-             System.out.println(receipt.get(i).getItemQty());
+        {   
+  
+      //it only adds the first item because it is not looping with the input for loop  	
+      
+       int i = 0;
+      receipt.add(new Product(cafeItems.get(i).getName(), cafeItems.get(i).getItemPrice(), userInputQuantity));
+         
+      System.out.println("LTL Coffee Shop");
+      System.out.println("================");
+         for (i=0; i<receipt.size(); i++) {
+        	 
+             System.out.print("You order:  " + receipt.get(i).getName()+ "    ");
+             System.out.print(receipt.get(i).getItemQty());
+             System.out.println("        $" + receipt.get(i).getItemPrice());
+             System.out.println("Tax:  $" + df.format(calc.calculate(cafeItems.get(Integer.parseInt(userInput) - 1)
+                        .getItemPrice(), userInputQuantity) * 0.06));
+             System.out.println("Grand Total:  $" + df.format(grandTotal));
+             System.out.println();
+             System.out.println("Thank you for your Business.");
          }
-         } 
-    }
+         
+        }
     
-    // End of main
+} // End of main
+    
     public static void readFile(File myConfigFile) {
         try {
             FileReader reader = new FileReader(myConfigFile);
@@ -153,9 +177,4 @@ continue;
         } catch (IOException e) {
         }
     }
-}// End of Menu
-// test.setName(userInput);
-// System.out.println(test.getName());
-// Product menuItem = new Product();
-// menuItem.setName(userInput);
-// System.out.println(menuItem.getName());
+}
